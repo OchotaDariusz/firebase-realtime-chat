@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Real-time chatroom</title>
+</head>
+
+<body>
+
+    <div class="container my-4">
+        <h1 class="my-4 text-center">Real-time chatroom</h1>
+
+        <div class="chat-rooms | mb-3 text-center">
+            <div class="my-2">Choose a chatroom</div>
+            <button class="btn btn-info" id="general">#general</button>
+            <button class="btn btn-info" id="gaming">#gaming</button>
+            <button class="btn btn-info" id="music">#music</button>
+            <button class="btn btn-info" id="other">#other</button>
+        </div>
+
+        <div class="chat-window">
+            <ul class="chat-list | list-group"></ul>
+        </div>
+
+        <form class="new-chat | my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label for="message">
+                        <div class="input-group-text">Your message:</div>
+                    </label>
+                </div>
+                <input type="text" id="message" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+
+        <form class="new-name my-3">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label for="name">
+                        <div class="input-group-text">Update name:</div>
+                    </label>
+                </div>
+                <input type="text" id="name" class="form-control" required>
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+            <div class="update-mssg"></div>
+        </form>
+    </div>
+
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-firestore.js"></script>
+    <script>
+        const config = {
+            apiKey: "AIzaSyCDslrkGhG_ceQtbBOnnA9Q3Ouz-kaHjqA",
+            authDomain: "real-time-chatroom-6cd19.firebaseapp.com",
+            projectId: "real-time-chatroom-6cd19",
+            storageBucket: "real-time-chatroom-6cd19.appspot.com",
+            messagingSenderId: "237264525690",
+            appId: "1:237264525690:web:3aaaafef2af4d426ae5ec3"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+    </script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>

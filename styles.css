@@ -1,0 +1,49 @@
+.input-group-prepend > label > .input-group-text {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    transition: background-color .15s ease;
+}
+
+.input-group-prepend > label > .input-group-text:hover {
+    background-color: lightgray;
+}
+
+.input-group-append > .btn {
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+input[type='text'] {
+    transition: background-color .15s ease;
+}
+
+input[type='text']:hover {
+    background-color: lightgray;
+}
+
+.btn-primary,
+.btn-info {
+    transition: color .15s ease;
+}
+
+.btn-primary:hover {
+    color: black !important;
+}
+
+.btn-info:hover {
+    color: white !important;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.time {
+    font-size: .7em;
+    color: #999;
+}
+
+.update-mssg {
+    text-align: center;
+    margin: 20px auto;
+}
