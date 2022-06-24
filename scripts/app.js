@@ -14,7 +14,7 @@ newChatForm.addEventListener('submit', event => {
         .catch(err => console.log(err.message));
 });
 
-newNameForm.addEventListener('submit', event  => {
+newNameForm.addEventListener('submit', event => {
     event.preventDefault();
     const newName = newNameForm.name.value.trim();
     chatroom.updateName(newName);
@@ -24,7 +24,7 @@ newNameForm.addEventListener('submit', event  => {
 });
 
 rooms.addEventListener('click', event => {
-    if(event.target.tagName === "BUTTON"){
+    if (event.target.tagName === "BUTTON") {
         chatUI.clear();
         chatroom.updateRoom(event.target.getAttribute('id'));
         chatroom.getChats(chat => chatUI.render(chat));

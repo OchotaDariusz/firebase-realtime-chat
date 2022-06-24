@@ -1,11 +1,11 @@
 class ChatUI {
-    constructor(list){
+    constructor(list) {
         this.list = list;
     }
-    clear(){
+    clear() {
         this.list.innerHTML = '';
     }
-    render(data){
+    render(data) {
         const when = dateFns.distanceInWordsToNow(
             data.created_at.toDate(),
             { addSuffix: true }

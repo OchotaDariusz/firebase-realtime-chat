@@ -1,14 +1,14 @@
-.input-group-prepend > label > .input-group-text {
+.input-group-prepend>label>.input-group-text {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     transition: background-color .15s ease;
 }
 
-.input-group-prepend > label > .input-group-text:hover {
+.input-group-prepend>label>.input-group-text:hover {
     background-color: lightgray;
 }
 
-.input-group-append > .btn {
+.input-group-append>.btn {
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
 }
