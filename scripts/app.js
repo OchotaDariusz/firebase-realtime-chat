@@ -31,7 +31,7 @@ rooms.addEventListener('click', event => {
     }
 });
 
-const username = localStorage.username ? localStorage.username : 'Anonymous'
+const username = localStorage.username ? localStorage.username : 'Anonymous';
 
 const chatUI = new ChatUI(chatList);
 const chatroom = new Chatroom('general', username);

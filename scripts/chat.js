@@ -24,6 +24,7 @@ class Chatroom {
                 snapshot.docChanges().forEach(change => {
                     if(change.type === 'added'){
                         callback(change.doc.data());
+                        this.clearChat();
                     }
                 });
             });
@@ -38,5 +39,26 @@ class Chatroom {
         if(this.unsub){
             this.unsub();
         }
+    }
+    clearChat(){
+        this.chats
+            .where('room', '==', this.room)
+            .orderBy('created_at')
+            .get()
+            .then(snapshot => {
+                if(snapshot.docs.length > 5){
+                    let idToRemove = snapshot.docs[0].id;
+                    this.removeChat(idToRemove);
+                    this.clearChat();
+                    chatUI.clear();
+                    this.getChats(chat => chatUI.render(chat));
+                }
+            })
+            .catch(err => console.log(err.message));
+    }
+    removeChat(messageID){
+        this.chats.doc(messageID).delete().then(() => {
+            console.log('message', messageID, 'removed');
+        }).catch(err => console.log(err.message));
     }
 }
